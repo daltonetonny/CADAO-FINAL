@@ -19,7 +19,7 @@
         body {
             background-color: #f9fafb;
             overflow-x: hidden;
-            padding-top: 80px; /* Added to prevent navbar overlap */
+            padding-top: 80px; /* Prevent navbar overlap */
         }
 
         /* Navbar Styles */
@@ -117,9 +117,10 @@
         /* Contact Form Styles */
         .contact-form {
             background: #fff;
-            padding: 3rem;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border: 1px solid #e5e7eb;
             max-width: 600px;
             margin: 0 auto;
         }
@@ -173,8 +174,8 @@
         /* Donation Section Styles */
         .donation-section {
             background: linear-gradient(90deg, #1a4d2e, #2e7d32);
-            padding: 4rem 2rem; /* Increased padding for visibility */
-            border-radius: 10px;
+            padding: 4rem 2rem;
+            border-radius: 15px;
             color: #fff;
             margin-top: 4rem;
             position: relative;
@@ -188,47 +189,62 @@
             margin-top: 2rem;
         }
 
-        .donation-card {
+        .card {
             background: #fff;
-            color: #1a4d2e;
-            padding: 1.5rem;
-            border-radius: 10px;
-            border: 2px solid #e5e7eb;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+            border: 1px solid #e5e7eb;
             transition: all 0.4s ease;
-            text-align: center;
+            position: relative;
+            overflow: hidden;
+            color: #4b5563;
         }
 
-        .donation-card:hover {
-            transform: scale(1.05);
-            border-color: #4caf50;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: #4caf50;
+            transition: all 0.4s ease;
         }
 
-        .donation-card i {
-            font-size: 2rem;
-            color: #4caf50;
-            margin-bottom: 1rem;
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.15);
         }
 
-        .donation-card h3 {
+        .card:hover::before {
+            height: 100%;
+            opacity: 0.05;
+        }
+
+        .card h3 {
+            color: #1a4d2e;
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 1rem;
         }
 
-        .donation-card ul {
-            list-style: none;
-            text-align: left;
-            padding: 0;
+        .card h3 i {
+            margin-right: 0.5rem;
         }
 
-        .donation-card ul li {
+        .card ul {
+            list-style: none;
+            padding: 0;
+            text-align: left;
+        }
+
+        .card ul li {
             font-size: 1rem;
             margin-bottom: 0.5rem;
-            color: #374151;
         }
 
-        .donation-card ul li strong {
+        .card ul li strong {
             color: #1a4d2e;
         }
 
@@ -267,12 +283,12 @@
                 font-size: 2.2rem;
             }
             .contact-form {
-                padding: 2rem;
+                padding: 1.5rem;
             }
-            .donation-card h3 {
+            .card h3 {
                 font-size: 1.3rem;
             }
-            .donation-card ul li {
+            .card ul li {
                 font-size: 0.9rem;
             }
         }
@@ -312,9 +328,8 @@
     <section class="donation-section">
         <h2>Support CADAO with a Donation</h2>
         <div class="donation-grid">
-            <div class="donation-card card">
-                <i class="fas fa-university"></i>
-                <h3>Bank Transfer</h3>
+            <div class="card">
+                <h3><i class="fas fa-university"></i> Bank Transfer</h3>
                 <ul>
                     <li><strong>Account Name:</strong> CADAO Foundation</li>
                     <li><strong>Account Number:</strong> 1234567890</li>
@@ -323,17 +338,15 @@
                     <li><strong>SWIFT Code:</strong> EXABXXXX</li>
                 </ul>
             </div>
-            <div class="donation-card card">
-                <i class="fab fa-paypal"></i>
-                <h3>PayPal</h3>
+            <div class="card">
+                <h3><i class="fab fa-paypal"></i> PayPal</h3>
                 <ul>
                     <li><strong>Email:</strong> donations@cadao.org</li>
                     <li>Send your contribution via PayPal to support our initiatives.</li>
                 </ul>
             </div>
-            <div class="donation-card card">
-                <i class="fas fa-mobile-alt"></i>
-                <h3>Mobile Money (M-Pesa)</h3>
+            <div class="card">
+                <h3><i class="fas fa-mobile-alt"></i> Mobile Money (M-Pesa)</h3>
                 <ul>
                     <li><strong>Paybill Number:</strong> 123456</li>
                     <li><strong>Account Name:</strong> CADAO Donation</li>
