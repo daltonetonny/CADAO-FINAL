@@ -1,9 +1,8 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact - CADAO</title>
+    <title>Contact Us - CADAO</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -114,122 +113,126 @@
             transform: translateX(-50%);
         }
 
-        /* Contact Form */
+        /* Contact Form Styles */
         .contact-form {
-            max-width: 700px;
-            margin: 0 auto;
             background: #fff;
-            padding: 2rem;
-            border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0,0,0,0.1);
-            border: 1px solid #e5e7eb;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .contact-form input, .contact-form textarea {
-            width: 100%;
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-            border: 1px solid #d1d5db;
-            border-radius: 8px;
+        .contact-form label {
+            display: block;
             font-size: 1rem;
-            transition: all 0.3s ease;
+            font-weight: 600;
+            color: #1a4d2e;
+            margin-bottom: 0.5rem;
         }
 
-        .contact-form input:focus, .contact-form textarea:focus {
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 0.8rem;
+            margin-bottom: 1.5rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
             border-color: #4caf50;
-            box-shadow: 0 0 0 3px rgba(76,175,80,0.1);
             outline: none;
         }
 
+        .contact-form textarea {
+            resize: vertical;
+            min-height: 150px;
+        }
+
         .contact-form button {
-            background: #4caf50;
+            background: linear-gradient(90deg, #1a4d2e, #2e7d32);
             color: #fff;
-            padding: 1rem 2rem;
+            padding: 0.8rem 2rem;
             border: none;
-            border-radius: 8px;
+            border-radius: 5px;
             font-size: 1rem;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
-            width: 100%;
-            position: relative;
-        }
-
-        .contact-form button i {
-            margin-right: 0.5rem;
+            transition: background 0.3s ease;
         }
 
         .contact-form button:hover {
-            background: #388e3c;
-            transform: translateY(-2px);
+            background: linear-gradient(90deg, #123524, #1b5e20);
         }
 
-        .contact-form button:disabled {
-            background: #cccccc;
-            cursor: not-allowed;
-            transform: none;
+        /* Donation Section Styles */
+        .donation-section {
+            background: linear-gradient(90deg, #1a4d2e, #2e7d32);
+            padding: 3rem 2rem;
+            border-radius: 10px;
+            color: #fff;
+            margin-top: 4rem;
         }
 
-        .contact-form button.loading::after {
-            content: '';
-            display: inline-block;
-            width: 16px;
-            height: 16px;
-            border: 2px solid #fff;
-            border-top: 2px solid transparent;
-            border-radius: 50%;
-            animation: spin 0.8s linear infinite;
-            margin-left: 0.5rem;
-        }
-
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-
-        .form-message {
-            margin-top: 1rem;
-            text-align: center;
-            font-size: 1rem;
-            padding: 0.5rem;
-            border-radius: 5px;
-        }
-
-        .form-message.success {
-            color: #2e7d32;
-            background: #e8f5e9;
-        }
-
-        .form-message.error {
-            color: #d32f2f;
-            background: #ffebee;
-        }
-
-        .contact-info {
-            text-align: center;
+        .donation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
             margin-top: 2rem;
         }
 
-        .contact-info p {
-            margin-bottom: 0.8rem;
-            color: #4b5563;
-        }
-
-        .contact-info p i {
-            margin-right: 0.5rem;
-            color: #4caf50;
-        }
-
-        .social-links a {
+        .donation-card {
+            background: #fff;
             color: #1a4d2e;
-            margin: 0 1rem;
-            font-size: 1.2rem;
-            text-decoration: none;
-            transition: all 0.3s ease;
+            padding: 1.5rem;
+            border-radius: 10px;
+            border: 2px solid #e5e7eb;
+            transition: all 0.4s ease;
+            text-align: center;
         }
 
-        .social-links a:hover {
+        .donation-card:hover {
+            transform: scale(1.05);
+            border-color: #4caf50;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+        }
+
+        .donation-card i {
+            font-size: 2rem;
             color: #4caf50;
-            transform: translateY(-3px);
+            margin-bottom: 1rem;
+        }
+
+        .donation-card h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .donation-card p {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: #374151;
+        }
+
+        .donation-note {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1rem;
+        }
+
+        .donation-note a {
+            color: #a5d6a7;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .donation-note a:hover {
+            color: #fff;
         }
 
         /* Footer */
@@ -250,6 +253,15 @@
             section h2 {
                 font-size: 2.2rem;
             }
+            .contact-form {
+                padding: 2rem;
+            }
+            .donation-card h3 {
+                font-size: 1.3rem;
+            }
+            .donation-card p {
+                font-size: 0.9rem;
+            }
         }
     </style>
 </head>
@@ -268,25 +280,50 @@
         </div>
     </nav>
 
-    <section>
+    <section id="contact">
         <h2>Contact Us</h2>
-        <form class="contact-form" id="contactForm">
-            <input type="text" name="name" placeholder="Name" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <textarea name="message" placeholder="Message" rows="5" required></textarea>
-            <button type="submit" id="sendButton"><i class="fas fa-paper-plane"></i> Send Message</button>
-            <div class="form-message" id="formMessage"></div>
+        <form class="contact-form" action="mailto:support@cadao.org" method="POST" enctype="text/plain">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+            
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+            
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+            
+            <button type="submit">Send Message</button>
         </form>
-        <div class="contact-info">
-            <p><i class="fas fa-map-marker-alt"></i> <strong>Address:</strong> P.O. Box 123, Kendu Bay, Homabay County, Kenya</p>
-            <p><i class="fas fa-envelope"></i> <strong>Email:</strong> cadao.development@gmail.com</p>
-            <p><i class="fas fa-phone"></i> <strong>Phone:</strong> +254 753 371141</p>
-            <div class="social-links">
-                <a href="https://www.facebook.com"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.twitter.com/TonnyObala"><i class="fab fa-twitter"></i></a>
-                <a href="https://www.instagram.com/iam_daltone/"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.linkedin.com/in/tonny-daltone-obala-b178bb9b/"><i class="fab fa-linkedin-in"></i></a>
+    </section>
+
+    <section class="donation-section">
+        <h2>Support CADAO with a Donation</h2>
+        <div class="donation-grid">
+            <div class="donation-card card">
+                <i class="fas fa-university"></i>
+                <h3>Bank Transfer</h3>
+                <p><strong>Account Name:</strong> CADAO Foundation</p>
+                <p><strong>Account Number:</strong> 1234567890</p>
+                <p><strong>Bank Name:</strong> Example Bank</p>
+                <p><strong>Branch:</strong> Main Branch</p>
+                <p><strong>SWIFT Code:</strong> EXABXXXX</p>
             </div>
+            <div class="donation-card card">
+                <i class="fab fa-paypal"></i>
+                <h3>PayPal</h3>
+                <p><strong>Email:</strong> donations@cadao.org</p>
+                <p>Send your contribution via PayPal to support our initiatives.</p>
+            </div>
+            <div class="donation-card card">
+                <i class="fas fa-mobile-alt"></i>
+                <h3>Mobile Money (M-Pesa)</h3>
+                <p><strong>Paybill Number:</strong> 123456</p>
+                <p><strong>Account Name:</strong> CADAO Donation</p>
+                <p>Use M-Pesa to send your donation directly.</p>
+            </div>
+        </div>
+        <div class="donation-note">
+            <p>For more details, please <a href="#contact">contact us</a> above.</p>
         </div>
     </section>
 
@@ -294,7 +331,6 @@
         <p>© 2025 CADAO. All rights reserved.</p>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <script src="scripts.js"></script>
 </body>
 </html>
